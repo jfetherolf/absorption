@@ -31,7 +31,7 @@ def main():
 
     for omega_c in [0.3]:
         for beta in [1.]:
-            for nmode in [500]:
+            for nmode in [300]:
 
                 t_init = 0.0
                 t_final = 50.
@@ -42,7 +42,7 @@ def main():
 
                 my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT)
 
-                my_ehrenfest = ehrenfest.Ehrenfest(my_ham, nmode=nmode, ntraj=1000)
+                my_ehrenfest = ehrenfest.Ehrenfest(my_ham, nmode=nmode, ntraj=1)
                 time, rhos_site, rhos_eig = my_ehrenfest.propagate(rho_g, t_init, t_final, dt)
 
 #                my_spec = spec.Spectroscopy(dipole, my_ehrenfest)

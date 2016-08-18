@@ -29,28 +29,28 @@ def main(run=1):
                        [ 1.,  0.,  0.],
                        [ 1.,  0.,  0.]])
 
-    for omega_c in [0.1]:
+    for omega_c in [0.5]:
         for beta in [1.]:
-            for nmode in [500]:
+            for nmode in [100]:
 
                 t_init = 0.0
-                t_final = 30.
-                dt = 0.005
+                t_final = 50.
+                dt = 0.001
                 lamda = 0.5
                 kT = 1./beta
                 spec_densities = [['ohmic-lorentz', lamda, omega_c]]*nbath
 
                 my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT)
 
-                my_ehrenfest = ehrenfest.Ehrenfest(my_ham, nmode=nmode, ntraj=1000)
-#                time, rhos_site,rhos_eig = my_ehrenfest.propagate(rho_g, t_init, t_final, dt)
+                my_ehrenfest = ehrenfest.Ehrenfest(my_ham, nmode=nmode, ntraj=10)
+                time, rhos_site,rhos_eig = my_ehrenfest.propagate(rho_g, t_init, t_final, dt)
 
-                my_spec = spec.Spectroscopy(dipole, my_ehrenfest)
-                omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, 0., t_final, dt)
+#                my_spec = spec.Spectroscopy(dipole, my_ehrenfest)
+#                omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, t_init, t_final, dt)
 
-                with open('omegac%0.1f_beta%0.1f_lamda%0.1f_run%d.dat'%(omega_c,beta,lamda,run), 'w') as f:
-                    for (omega, intensity) in zip(omegas, intensities):
-                        f.write('%0.8f %0.8f\n'%(omega-eps, intensity))
+                with open('pop_omegac%0.1f_beta%0.1f_lamda%0.1f.dat'%(omega_c,beta,lamda), 'w') as f:
+                    for (times,rhos) in zip(time, rhos_site):
+                        f.write('%0.8f %0.8f %0.8f\n'%(time, rhos[1,1].real, rhos[2,2].real))
 
 if __name__ == '__main__':
     import sys
@@ -59,4 +59,4 @@ if __name__ == '__main__':
         print 'usage: run'
         sys.exit(1)
     run = int(args[0])
-    main(run)
+    main(run=1)

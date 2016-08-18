@@ -1,0 +1,2 @@
+/tmp/slurmd/job20045564/slurm_script: line 14:  7285 Bus error               python -u driver.py 1 >> pyrhoehrenjob.log
+slurmstepd-midway094: error: Exceeded step memory limit at some point.

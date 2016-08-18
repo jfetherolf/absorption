@@ -11,4 +11,4 @@ cd $WORKDIR
 
 export OMP_NUM_THREADS=2
 
-python -u driver.py >> pyrhoehrenjob.log
+python -u driver.py 1 >> pyrhoehrenjob.log
