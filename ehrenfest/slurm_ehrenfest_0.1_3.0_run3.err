@@ -1,2 +1,4 @@
-/tmp/slurmd/job20055192/slurm_script: line 12: 27140 Killed                  python batchdriver.py 0.1 3.0 3
-slurmstepd-midway096: error: Exceeded step memory limit at some point.
+slurmstepd-midway417: error: Job 20067027 exceeded memory limit (1848756 > 1843200), being killed
+slurmstepd-midway417: error: Exceeded job memory limit
+slurmstepd-midway417: error: *** JOB 20067027 ON midway417 CANCELLED AT 2016-08-19T11:59:32 ***
+slurmstepd-midway417: error: Exceeded step memory limit at some point.

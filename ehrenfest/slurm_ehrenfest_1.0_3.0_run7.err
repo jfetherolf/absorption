@@ -1,2 +1,2 @@
-/tmp/slurmd/job20055236/slurm_script: line 12: 18210 Killed                  python batchdriver.py 1.0 3.0 7
-slurmstepd-midway110: error: Exceeded step memory limit at some point.
+/tmp/slurmd/job20067071/slurm_script: line 12: 31340 Killed                  python batchdriver.py 1.0 3.0 7
+slurmstepd-midway306: error: Exceeded step memory limit at some point.
