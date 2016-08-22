@@ -2,7 +2,7 @@ import numpy as np
 
 from pyrho import ham, heom, spec
 
-def main(K,L):
+def main(omega_c,beta,K,L):
     nsite = 1+2
     nbath = 2
 
@@ -30,8 +30,8 @@ def main(K,L):
                        [ 1.,  0.,  0.]])
 
     for lamda in [0.5]:
-        for omega_c in [0.1]:
-            for beta in [3.]:
+        for omega_c in [omega_c]:
+            for beta in [beta]:
                 for L in [L]:
                     for K in [K]:
                         kT = 1./beta
@@ -49,16 +49,18 @@ def main(K,L):
                         my_spec = spec.Spectroscopy(dipole, my_heom)
                         omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, 0., t_final, dt)
 
-                        with open('L%0.1f_K%0.1f_omegac%0.1f_beta%0.1f_lamda%0.1f.dat'%(L,K,omega_c,beta,lamda), 'w') as f:
+                        with open('batch_L%0.1f_K%0.1f_omegac%0.1f_beta%0.1f_lamda%0.1f.dat'%(L,K,omega_c,beta,lamda), 'w') as f:
                             for (omega, intensity) in zip(omegas, intensities):
                                 f.write('%0.8f %0.8f\n'%(omega-eps, intensity))
 
 if __name__ == '__main__':
     import sys
     args = sys.argv[1:]
-    if len(args) != 2:
+    if len(args) != 4:
         print 'usage: run'
         sys.exit(1)
-    L = int(args[0])
-    K = int(args[1])
-    main(K,L)
+    omega_c = float(args[0])
+    beta = float(args[1])
+    L = int(args[2])
+    K = int(args[3])
+    main(omega_c,beta,K,L)

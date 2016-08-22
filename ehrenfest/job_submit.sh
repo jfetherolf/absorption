@@ -10,7 +10,7 @@ fi
 
 nrun=$1
 
-for omega_c in 0.1 0.3 1.0; do
+for omega_c in 1.0; do
     for beta in 1.0 3.0; do
         for run in `seq ${nrun}`; do
             slurmsh="slurm_$run.sh"

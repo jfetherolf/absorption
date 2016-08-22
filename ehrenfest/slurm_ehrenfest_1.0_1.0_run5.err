@@ -1,3 +1,0 @@
-slurmstepd-midway337: error: Job 20067059 exceeded memory limit (1849936 > 1843200), being killed
-/tmp/slurmd/job20067059/slurm_script: line 12: 12327 Bus error               python batchdriver.py 1.0 1.0 5
-slurmstepd-midway337: error: Exceeded step memory limit at some point.

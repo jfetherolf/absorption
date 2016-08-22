@@ -35,7 +35,7 @@ def main(omega_c, beta, run):
 
                 t_init = 0.0
                 t_final = 30.
-                dt = 0.01
+                dt = 0.005
                 lamda = 0.5
                 kT = 1./beta
                 spec_densities = [['ohmic-lorentz', lamda, omega_c]]*nbath

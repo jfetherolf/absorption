@@ -1,4 +1,0 @@
-slurmstepd-midway337: error: Job 20067058 exceeded memory limit (1849496 > 1843200), being killed
-slurmstepd-midway337: error: *** JOB 20067058 ON midway337 CANCELLED AT 2016-08-19T12:04:22 ***
-slurmstepd-midway337: error: Exceeded step memory limit at some point.
-slurmstepd-midway337: error: Exceeded job memory limit
