@@ -22,7 +22,7 @@ def multi_enumerate(*iterables, **kwds):
     start = kwds.get('start', 0)
     return ((n,)+t for n, t in enumerate(izip(*iterables), start))
 
-DATA_FILE_PATTERN = '*.dat'
+DATA_FILE_PATTERN = 'batch*.dat'
 MIN_DATA_FILES = 2
 
 with multi_file_manager(iglob(DATA_FILE_PATTERN)) as datfiles:
