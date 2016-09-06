@@ -1,0 +1,29 @@
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 4
+--- Maximum Matsubara frequency, K = 1
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+--- Propagating RDM ... done.
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(2500) propagations.
+--- Calculating third-order response function ... done.
+--- Performing 2D Fourier transform ... done.
