@@ -69,7 +69,7 @@ def main():
             omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, t_final, dt, dipole_file =
                     'dipole_hybrid_omegac%0.1f_beta%0.1f.dat'%(omega_c,beta), is_damped=True)
 
-            with open('abs_hybrid_tlc2fm_omegac%0.1f_beta%0.1f_split%0.1f.dat'%(omega_c,beta,omega_split[1]), 'w') as f:
+            with open('abs_hybrid_tlc2fm_omegac%0.1f_beta%0.1f_split%0.1f_run9.dat'%(omega_c,beta,omega_split[1]), 'w') as f:
                 for (omega, intensity) in zip(omegas, intensities):
                     f.write('%0.8f %0.8f\n'%(omega-eps, intensity))
 
