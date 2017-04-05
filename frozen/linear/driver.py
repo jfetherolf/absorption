@@ -2,12 +2,13 @@ import numpy as np
 
 from pyrho import ham, frozen, spec
 
-def main():
+def main(omega_c, beta, run):
+
     nsite = 1+2
     nbath = 2
 
     eps = 0.
-
+    
     # System Hamiltonian
     # n = 0 is ground state
     ham_sys = np.array([[ 0.,  0.,  0.],
@@ -29,28 +30,37 @@ def main():
                        [ 1.,  0.,  0.],
                        [ 1.,  0.,  0.]])
 
-    for omega_c in [1.0]:
-        for beta in [3.]:
+    for omega_c in [omega_c]:
+        for beta in [beta]:
             for nmode in [1000]:
 
+
                 t_init = 0.0
-                t_final = 25.
-                dt = 0.5
+                t_final = 30.
+                dt = 0.1
                 lamda = 0.5
                 kT = 1./beta
                 spec_densities = [['ohmic-lorentz', lamda, omega_c]]*nbath
 
-                my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT, sample_wigner=True)
+                my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT, sample_wigner=False)
 
                 my_frozen = frozen.FrozenModes(my_ham, nmode=nmode, ntraj=int(1e4))
 #                time, rhos_site,rhos_eig = my_ehrenfest.propagate(rho_g, t_init, t_final, dt)
 
                 my_spec = spec.Spectroscopy(dipole, my_frozen)
-                omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, t_final, dt)
+                omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, t_final, dt, is_damped=True)
 
-                with open('wigner_frozen_omegac%0.1f_beta%0.1f_lamda%0.1f.dat'%(omega_c,beta,lamda), 'w') as f:
+                with open('frozen_omegac%0.1f_beta%0.1f_lamda%0.1f_run%d.dat'%(omega_c,beta,lamda,run), 'w') as f:
                     for (omega, intensity) in zip(omegas, intensities):
                         f.write('%0.8f %0.8f\n'%(omega-eps, intensity))
 
 if __name__ == '__main__':
-    main()
+    import sys
+    args = sys.argv[1:]
+    if len(args) != 3:
+        print 'usage: run'
+        sys.exit(1)
+    omega_c = float(args[0])
+    beta = float(args[1])
+    run = int(args[2])
+    main(omega_c, beta, run)

@@ -1,0 +1,4 @@
+slurmstepd-midway400: error: Job 24253463 exceeded memory limit (7377264 > 7372800), being killed
+slurmstepd-midway400: error: Exceeded job memory limit
+slurmstepd-midway400: error: *** JOB 24253463 ON midway400 CANCELLED AT 2017-02-27T05:25:50 ***
+slurmstepd-midway400: error: Exceeded step memory limit at some point.

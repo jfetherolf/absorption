@@ -1,0 +1,2 @@
+/tmp/slurmd/job24253458/slurm_script: line 15: 17594 Bus error               python eetdriverrf.py 100. 300. 2.
+slurmstepd-midway070: error: Exceeded step memory limit at some point.

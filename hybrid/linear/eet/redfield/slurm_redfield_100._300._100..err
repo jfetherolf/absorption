@@ -1,0 +1,2 @@
+/tmp/slurmd/job24253460/slurm_script: line 15: 17724 Killed                  python eetdriverrf.py 100. 300. 100.
+slurmstepd-midway070: error: Exceeded step memory limit at some point.

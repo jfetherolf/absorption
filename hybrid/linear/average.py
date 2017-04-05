@@ -22,7 +22,7 @@ def multi_enumerate(*iterables, **kwds):
     start = kwds.get('start', 0)
     return ((n,)+t for n, t in enumerate(izip(*iterables), start))
 
-DATA_FILE_PATTERN = '*.dat'
+DATA_FILE_PATTERN = 'abs_hybrid_frozenlimitnoPDboltzmann_omegac0.1_beta1.0_run*.dat'
 MIN_DATA_FILES = 2
 
 with multi_file_manager(iglob(DATA_FILE_PATTERN)) as datfiles:
@@ -56,7 +56,7 @@ with multi_file_manager(iglob(DATA_FILE_PATTERN)) as datfiles:
             std_devs.append(std_dev)
 
 print 'Average and (standard deviation) of values:'
-with open('means.dat', 'wt') as averages:
+with open('abs_hybrid_frozenlimitnoPDboltzmann_omegac0.1_beta1.0_1e5.dat', 'wt') as averages:
     for i, mean, std_dev in multi_enumerate(means, std_devs):
         print '{:.9f} ({:.9f})'.format(mean, std_dev),
         averages.write('{:.9f}'.format(mean))  # note std dev not written

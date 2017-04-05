@@ -30,10 +30,10 @@ def main():
             omega_r = 2*np.sqrt( (ham_sys[0,0]-ham_sys[1,1])**2/4.0 + ham_sys[0,1]**2 )/hbar
             omega_split = []
             for n in range(nbath):
-                omega_split.append(max(omega_r/4., omega_c))
-#               omega_split.append(0.)
+#               omega_split.append(max(omega_r/4., omega_c))
+                omega_split.append(0.)
             nmode = 300
-            ntraj = int(1e2)
+            ntraj = int(1e0)
             t_final = 25.
             dt = 0.01
             beta = 5.0
@@ -50,12 +50,13 @@ def main():
 
             my_redfield = redfield.Redfield(my_ham, method='TCL2', is_secular=False)
             
-            my_hybrid = hybrid.Hybrid(my_ham, my_frozen, my_redfield, omega_split = omega_split, use_PD=True)
+            my_hybrid = hybrid.Hybrid(my_ham, my_frozen, my_redfield, omega_split = omega_split, use_PD=False)
 
             times, rhos_site, rhos_eig = my_hybrid.propagate(rho_0, 0.0, t_final, dt)
                 
 
-            with open('poptest_hybridtcl2_PD_2015_omegac-%0.1f_lam-%0.1f_beta-%0.1f.dat'%(omega_c,lamda,beta), 'w') as f:
+ #           with open('poptest_hybridtcl2_PD_2015_omegac-%0.1f_lam-%0.1f_beta-%0.1f.dat'%(omega_c,lamda,beta), 'w') as f:
+            with open('bleh', 'w') as f:
                 for (time, rho_site, rho_eig) in zip(times, rhos_site, rhos_eig):
                     f.write('%0.8f %0.8f\n'%(time, rho_site[0,0].real - rho_site[1,1].real))
 

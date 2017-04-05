@@ -1,0 +1,62 @@
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-1.  0.  1.]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 28
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+--- Propagating RDM ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-1.  0.  1.]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 30
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+--- Propagating RDM ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-1.  0.  1.]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 21
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+--- Propagating RDM ... done.

@@ -32,7 +32,7 @@ def main():
     for lamda in [0.5]:
         for omega_c in [0.3]:
             for beta in [1.]:
-                for L in [12]:
+                for L in [8]:
                     for K in [0]:
                         kT = 1./beta
                         spec_densities = [['ohmic-lorentz', lamda, omega_c]]*nbath
@@ -49,7 +49,7 @@ def main():
                         my_spec = spec.Spectroscopy(dipole, my_heom)
                         omegas, intensities = my_spec.absorption(-4.+eps, 4.+eps, 0.02, rho_g, t_final, dt, dipole_file = 'dipole_L%0.1f_K%0.1f_omegac%0.1f_beta%0.1f.dat'%(L,K,omega_c,beta) )
 
-                        with open('L%0.1f_K%0.1f_omegac%0.1f_beta%0.1f.dat'%(L,K,omega_c,beta), 'w') as f:
+                        with open('testtesttest_L%0.1f_K%0.1f_omegac%0.1f_beta%0.1f.dat'%(L,K,omega_c,beta), 'w') as f:
                             for (omega, intensity) in zip(omegas, intensities):
                                 f.write('%0.8f %0.8f\n'%(omega-eps, intensity))
 

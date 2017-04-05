@@ -2,12 +2,12 @@ import numpy as np
 
 from pyrho import ham, frozen, redfield, hybrid, spec
 
-def main():
+def main(tau_c, T, lamda, split):
     nsite = 1+2
     nbath = 2
     
     kB = 0.69352    # in cm-1 / K
-    kT = kB*300.
+    kT = kB*T
     hbar = 5308.8   # in cm-1 * fs
 
     # System Hamiltonian
@@ -32,7 +32,7 @@ def main():
                        [ 1.,  0.,  0.]])
 
         
-    for omega_c in [1./100.]:
+    for omega_c in [1/tau_c]:
         for beta in [1./kT]:
             for nmode in [300]:
                 
@@ -61,7 +61,7 @@ def main():
                 my_frozen = frozen.FrozenModes(my_ham_slow, nmode=nmode, ntraj=ntraj,)
                 my_redfield = redfield.Redfield(my_ham_fast, method='TCL2')
 
-                my_hybrid = hybrid.Hybrid(my_ham, my_frozen, my_redfield, omega_split = omega_split, use_PD=False)
+#               my_hybrid = hybrid.Hybrid(my_ham, my_frozen, my_redfield, omega_split = omega_split, use_PD=False)
 #               times, rhos_site,rhos_eig = my_hybrid.propagate(rho_g, 0.0, t_final, dt)
 
                 my_spec = spec.Spectroscopy(dipole, my_hybrid)
@@ -77,6 +77,14 @@ def main():
                     for (omega, intensity) in zip(omegas, intensities):
                         f.write('%0.8f %0.8f\n'%(omega-100, intensity))
 
-
 if __name__ == '__main__':
-    main()
+    import sys
+    args = sys.argv[1:]
+    if len(args) != 4:
+        print 'usage: run'
+        sys.exit(1)
+    omega_c = float(args[0])
+    beta = float(args[1])
+    lamda = float(args[2])
+    split = float(args[3])
+    main(tau_c, T, lamda, split)

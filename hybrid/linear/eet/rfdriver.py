@@ -44,7 +44,7 @@ def main():
 
             my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT, hbar=hbar)
             
-            my_redfield = redfield.Redfield(my_ham, method='TCL2')
+            my_redfield = redfield.Redfield(my_ham, method='TC2')
 
 #               times, rhos_site,rhos_eig = my_hybrid.propagate(rho_g, 0.0, t_final, dt)
 

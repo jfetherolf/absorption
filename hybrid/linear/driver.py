@@ -40,7 +40,7 @@ def main():
 
                 for n in range(nbath):
                     omega_split.append(max(omega_r/div, omega_c))
-    #               omega_split.append(1e16)
+    #               omega_split.append(2e-4)
 
 
                 nmode = 300

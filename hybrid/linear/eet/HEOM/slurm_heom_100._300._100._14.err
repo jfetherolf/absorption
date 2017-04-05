@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "popeetheom.py", line 77, in <module>
+    main(tau_c, T, lamda, L)
+  File "popeetheom.py", line 60, in main
+    f.write('%0.8f %0.8f %0.8f\n'%(time, rho_site[1,1].real, rho_site[2,2].real,rho_site[0,0].real,rho_site[1,0].real))
+TypeError: not all arguments converted during string formatting
