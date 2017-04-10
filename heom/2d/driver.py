@@ -53,28 +53,29 @@ def main():
 
     for K in [1]:
         for L in [4]:
-            my_method = heom.HEOM(my_ham, L=L, K=K)
-            my_spec = spec.Spectroscopy(dipole, my_method)
+            for lioupath in ['total']:
+                my_method = heom.HEOM(my_ham, L=L, K=K)
+                my_spec = spec.Spectroscopy(dipole, my_method)
 
-            omegas, intensities = my_spec.absorption(
-                        -400., 400., 2., 
-                        rho_g, t_final, dt)
+                omegas, intensities = my_spec.absorption(
+                            -400., 400., 2., 
+                            rho_g, t_final, dt)
 
-            with open('abs_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(dt,t_final,L,K), 'w') as f:
-                for (omega, intensity) in zip(omegas, intensities):
-                    f.write('%0.8f %0.8f\n'%(omega, intensity))
+                with open('abs_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(dt,t_final,L,K), 'w') as f:
+                    for (omega, intensity) in zip(omegas, intensities):
+                        f.write('%0.8f %0.8f\n'%(omega, intensity))
 
-            omega1s, omega3s, t2s, spectra = my_spec.two_dimensional(
-                        -400., 400., 10.,
-                        -400., 400., 10.,
-                        T_init, T_final, dT,
-                        rho_g, t_final, dt)
+                omega1s, omega3s, t2s, spectra = my_spec.two_dimensional(
+                            -400., 400., 10.,
+                            -400., 400., 10.,
+                            T_init, T_final, dT,
+                            rho_g, t_final, dt,do2d=lioupath)
 
-            for t2, spectrum in zip(t2s, spectra):
-                with open('2d_t2-%0.1f_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(t2,dt,t_final,L,K), 'w') as f:
-                    for w1 in range(len(omega1s)):
-                        for w3 in range(len(omega3s)):
-                            f.write('%0.8f %0.8f %0.8f\n'%(omega1s[w1], omega3s[w3], spectrum[w3,w1]))
-                        f.write('\n')
+                for t2, spectrum in zip(t2s, spectra):
+                    with open('2d_%s_t2-%0.1f_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(lioupath,t2,dt,t_final,L,K), 'w') as f:
+                        for w1 in range(len(omega1s)):
+                            for w3 in range(len(omega3s)):
+                                f.write('%0.8f %0.8f %0.8f\n'%(omega1s[w1], omega3s[w3], spectrum[w3,w1]))
+                            f.write('\n')
 if __name__ == '__main__':
     main()
