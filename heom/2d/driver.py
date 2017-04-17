@@ -32,9 +32,9 @@ def main():
     ham_sys, ham_sysbath, dipole = spec.convert_to_xx(ham_sys_x, ham_sysbath_x, dipole_x)
     nsite = ham_sys.shape[0]
     
-    T = 77.
+    T = 300.
     lamda = 60.
-    tau_c = 100. # in fs
+    tau_c = 30. # in fs
     omega_c = 1./tau_c
     kT = kB*T
 
@@ -43,17 +43,17 @@ def main():
     my_ham = ham.Hamiltonian(ham_sys, ham_sysbath, spec_densities, kT, hbar=hbar)
 
     # Numerical propagation parameters
-    t_final, dt = 500., 10.
+    t_final, dt = 500., 3.
 
     # Waiting time parameters
-    T_init, T_final, dT = 0., 700., 100.
+    T_init, T_final, dT = 0., 500., 100.
 
     rho_g = np.zeros((nsite,nsite))
     rho_g[0,0] = 1.0
 
-    for K in [1]:
-        for L in [4]:
-            for lioupath in ['total']:
+    for K in [0]:
+        for L in [10]:
+            for lpath in ['allgsb']:
                 my_method = heom.HEOM(my_ham, L=L, K=K)
                 my_spec = spec.Spectroscopy(dipole, my_method)
 
@@ -61,7 +61,7 @@ def main():
                             -400., 400., 2., 
                             rho_g, t_final, dt)
 
-                with open('abs_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(dt,t_final,L,K), 'w') as f:
+                with open('abs_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d_omegac%0.2f_lamda%0.1f_T%0.1f.dat'%(dt,t_final,L,K,omega_c,lamda,T), 'w') as f:
                     for (omega, intensity) in zip(omegas, intensities):
                         f.write('%0.8f %0.8f\n'%(omega, intensity))
 
@@ -69,10 +69,10 @@ def main():
                             -400., 400., 10.,
                             -400., 400., 10.,
                             T_init, T_final, dT,
-                            rho_g, t_final, dt,do2d=lioupath)
+                            rho_g, t_final, dt, lioupath=lpath)
 
                 for t2, spectrum in zip(t2s, spectra):
-                    with open('2d_%s_t2-%0.1f_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d.dat'%(lioupath,t2,dt,t_final,L,K), 'w') as f:
+                    with open('2d_%s_t2-%0.1f_HEOM_dt-%0.0f_tf-%0.0f_L-%d_K-%d_omegac%0.2f_lamda%0.1f_T%0.1f.dat'%(lpath,t2,dt,t_final,L,K,omega_c,lamda,T), 'w') as f:
                         for w1 in range(len(omega1s)):
                             for w3 in range(len(omega3s)):
                                 f.write('%0.8f %0.8f %0.8f\n'%(omega1s[w1], omega3s[w3], spectrum[w3,w1]))

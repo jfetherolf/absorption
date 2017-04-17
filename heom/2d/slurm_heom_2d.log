@@ -1,0 +1,232 @@
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 6
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including all Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including stimulated emission Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including ground state bleach Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including excited state absorption Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including stimulated emission Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including excited state absorption Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including ground state bleach Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
+
+********************************************************
+*   INITIALIZING SYSTEM+BATH HAMILTONIAN               *
+********************************************************
+
+--- System eigenvalues
+[-111.80339887    0.            0.          111.80339887]
+
+************************************************************************
+*   PERFORMING RDM DYNAMICS WITH THE HIERARCHICAL EQUATIONS OF MOTION  *
+************************************************************************
+--- Hierarchy depth, L = 10
+--- Maximum Matsubara frequency, K = 0
+--- Using Matsubara truncation scheme: Ishizaki-Tanimura
+--- Using Shi et al. scaled ADMs.
+--- Initializing auxiliary density matrix hierarchy ... done.
+--- Initializing Matsubara expansion ... done.
+
+********************************************************
+*   CALCULATING LINEAR ABSORPTION SPECTRUM             *
+********************************************************
+
+********************************************************
+*   CALCULATING TWO-DIMENSIONAL SPECTRUM               *
+********************************************************
+--- Spectrum will require O(1002) propagations.
+--- Calculating third-order response function ... Including all Liouville pathways
+done.
+--- Performing 2D Fourier transform ... done.
